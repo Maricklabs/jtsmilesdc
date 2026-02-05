@@ -1,0 +1,4 @@
+Reference Files/
+node_modules/
+.next/
+*.log
