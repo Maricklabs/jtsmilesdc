@@ -8,12 +8,12 @@ export default function DoctorIntro() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left: Doctor Photo */}
           <div>
-            <div className="rounded-2xl shadow-2xl overflow-hidden relative w-full h-auto">
+            <div className="rounded-2xl shadow-2xl overflow-hidden relative w-full max-w-md mx-auto lg:max-w-lg">
               <Image 
                 src="/images/doctor_profile_1.jpg" 
                 alt="Dr. JT Alunan - Your Trusted Dentist"
-                width={600}
-                height={600}
+                width={500}
+                height={500}
                 className="w-full h-auto object-contain"
               />
             </div>

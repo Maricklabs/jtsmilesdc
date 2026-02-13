@@ -2,14 +2,14 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 
 export const metadata: Metadata = {
-  title: 'Our Services | JT Alunan Dental Clinic',
+  title: 'Our Services | JTSmiles DC',
   description: 'Comprehensive dental services in Oton, Iloilo: general dentistry, braces, oral surgery, teeth whitening, and smile makeovers.',
 };
 
 const services = [
   {
     category: 'General Dentistry',
-    icon: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=400&h=400&fit=crop',
+    icon: '/images/adofferings_2.jpg',
     description: 'Essential dental care for the whole family.',
     treatments: [
       {
@@ -32,7 +32,7 @@ const services = [
   },
   {
     category: 'Orthodontics',
-    icon: 'https://images.unsplash.com/photo-1598256989800-fe5f95da9787?w=800&h=800&fit=crop',
+    icon: '/images/adofferings_1.jpg',
     description: 'Straighten your smile with braces and alignment treatments.',
     treatments: [
       {
@@ -51,7 +51,7 @@ const services = [
   },
   {
     category: 'Oral Surgery',
-    icon: 'https://images.unsplash.com/photo-1588776814546-daab30f310ce?w=800&h=800&fit=crop',
+    icon: '/images/adofferings_3.jpg',
     description: 'Safe surgical procedures with gentle care.',
     treatments: [
       {
@@ -66,7 +66,7 @@ const services = [
   },
   {
     category: 'Cosmetic Dentistry',
-    icon: 'https://images.unsplash.com/photo-1606811971618-4486d9e8b4b2?w=800&h=800&fit=crop',
+    icon: '/images/adofferings_4.jpg',
     description: 'Enhance your smile with aesthetic treatments.',
     treatments: [
       {
@@ -109,12 +109,13 @@ export default function ServicesPage() {
               <div className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${index % 2 === 0 ? '' : 'lg:flex-row-reverse'}`}>
                 {/* Image Section */}
                 <div className={`${index % 2 === 0 ? 'lg:order-1' : 'lg:order-2'}`}>
-                  <div className="relative w-full h-96 rounded-2xl overflow-hidden shadow-2xl">
+                  <div className="w-full rounded-2xl overflow-hidden shadow-2xl">
                     <Image 
                       src={service.icon}
                       alt={service.category}
-                      fill
-                      className="object-cover"
+                      width={800}
+                      height={800}
+                      className="w-full h-auto"
                     />
                   </div>
                 </div>
@@ -128,9 +129,9 @@ export default function ServicesPage() {
                     {service.treatments.map((treatment, tIndex) => (
                       <div 
                         key={tIndex}
-                        className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow duration-200"
+                        className="bg-white rounded-lg p-6 shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 group"
                       >
-                        <h3 className="text-xl font-bold mb-3 text-gray-800">{treatment.name}</h3>
+                        <h3 className="text-xl font-bold mb-3 text-gray-900 group-hover:text-gold transition-colors">{treatment.name}</h3>
                         <p className="text-gray-600 leading-relaxed">{treatment.details}</p>
                       </div>
                     ))}

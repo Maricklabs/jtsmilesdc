@@ -12,7 +12,7 @@ const tips = [
     ]
   },
   {
-    icon: 'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=400&h=400&fit=crop',
+    icon: 'https://www.luxsmiledental.com/blog/wp-content/uploads/2021/08/AdobeStock_158469570__1623160676_77036.jpg',
     title: 'Check-ups Every 6 Months',
     points: [
       'Regular cleaning para tanggalin ang plaque',
@@ -30,7 +30,7 @@ const tips = [
     ]
   },
   {
-    icon: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=400&h=400&fit=crop',
+    icon: 'https://img.freepik.com/free-photo/female-patient-flossing-her-teeth_107420-65468.jpg?semt=ais_user_personalization&w=740&q=80',
     title: 'Floss Daily',
     points: [
       'Removes food stuck between teeth',
@@ -51,29 +51,29 @@ export default function DentalTips() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {tips.map((tip, index) => (
             <div
               key={index}
-              className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-200"
+              className="bg-white rounded-lg shadow-md hover:shadow-2xl transition-all duration-300 overflow-hidden group border border-gray-100"
             >
-              <div className="relative h-48">
+              <div className="relative h-56 overflow-hidden">
                 <Image 
                   src={tip.icon}
                   alt={tip.title}
                   fill
-                  className="object-cover"
+                  className="object-cover group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-bold mb-4 text-gray-800">
+                <h3 className="text-xl font-bold mb-4 text-gray-900 group-hover:text-gold transition-colors">
                   {tip.title}
                 </h3>
                 <ul className="space-y-2">
                   {tip.points.map((point, idx) => (
                     <li key={idx} className="flex items-start">
-                      <span className="text-gold mr-2">•</span>
-                      <span className="text-gray-600">{point}</span>
+                      <span className="text-gold mr-2 mt-1">●</span>
+                      <span className="text-gray-600 text-sm">{point}</span>
                     </li>
                   ))}
                 </ul>

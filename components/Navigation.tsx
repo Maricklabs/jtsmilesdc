@@ -22,7 +22,7 @@ export default function Navigation() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3">
             <Image 
-              src="/logo.jpg" 
+              src="/images/Logo.png" 
               alt="JT Alunan Dental Clinic Logo" 
               width={50} 
               height={50}

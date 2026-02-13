@@ -33,15 +33,15 @@ export default function Testimonials() {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="bg-gradient-to-br from-purple-light to-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-200"
+              className="bg-white rounded-lg p-8 shadow-md hover:shadow-2xl transition-all duration-300 border border-gray-100 group"
             >
-              <div className="text-gold text-4xl mb-4">&ldquo;</div>
+              <div className="text-gold text-5xl mb-4 opacity-50">&ldquo;</div>
               <p className="text-gray-700 italic mb-6 leading-relaxed">
                 {testimonial.text}
               </p>
-              <div className="border-t border-gray-300 pt-4">
-                <p className="font-bold text-gray-800">{testimonial.name}</p>
-                <p className="text-sm text-gray-600">{testimonial.service}</p>
+              <div className="border-t border-gray-200 pt-4">
+                <p className="font-bold text-gray-900 group-hover:text-gold transition-colors">{testimonial.name}</p>
+                <p className="text-sm text-gray-500">{testimonial.service}</p>
               </div>
             </div>
           ))}

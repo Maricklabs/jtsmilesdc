@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 
 export const metadata: Metadata = {
-  title: 'About Us | JT Alunan Dental Clinic',
+  title: 'About Us | JTSmiles DC',
   description: 'Learn about Dr. JT Alunan and our newly opened dental clinic in Oton, Iloilo. Gentle care, education-focused, and community-oriented.',
 };
 
@@ -82,13 +82,13 @@ export default function AboutPage() {
           <div className="max-w-4xl mx-auto">
             <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
               <div className="grid grid-cols-1 md:grid-cols-2">
-                <div className="overflow-hidden">
+                <div className="overflow-hidden max-w-md mx-auto">
                   <Image 
                     src="/images/doctor_profile_2.jpg" 
                     alt="Dr. JT Alunan - General Dentist"
-                    width={600}
-                    height={600}
-                    className="w-full h-auto object-contain"
+                    width={500}
+                    height={500}
+                    className="w-full h-auto object-contain rounded-lg"
                   />
                 </div>
                 <div className="p-8">

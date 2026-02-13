@@ -3,22 +3,22 @@ import Image from 'next/image';
 
 const services = [
   {
-    icon: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=400&h=400&fit=crop',
+    icon: '/images/adofferings_2.jpg',
     title: 'General Dentistry',
     description: 'Simple cleaning to remove plaque and tartar — para fresh at malinis ang ngiti mo. Check-ups, fillings, and extractions.',
   },
   {
-    icon: 'https://images.unsplash.com/photo-1598256989800-fe5f95da9787?w=600&h=600&fit=crop',
+    icon: '/images/adofferings_1.jpg',
     title: 'Braces & Orthodontics',
     description: 'Metal braces, ceramic braces para sa straighter, more confident smile. Payment plans available.',
   },
   {
-    icon: 'https://images.unsplash.com/photo-1588776814546-daab30f310ce?w=600&h=600&fit=crop',
+    icon: '/images/adofferings_3.jpg',
     title: 'Oral Surgery',
     description: 'Wisdom tooth removal, minor surgery. Maalagang approach with clear explanations bago ang procedure.',
   },
   {
-    icon: 'https://images.unsplash.com/photo-1606811971618-4486d9e8b4b2?w=600&h=600&fit=crop',
+    icon: '/images/adofferings_4.jpg',
     title: 'Smile Makeovers',
     description: 'Teeth whitening, veneers, bonding. From shy smiles to smile goals — transformation na natural at beautiful.',
   },
@@ -39,21 +39,25 @@ export default function Services() {
           {services.map((service, index) => (
             <div
               key={index}
-              className="bg-gradient-to-br from-white to-purple-light border border-gray-200 rounded-xl overflow-hidden hover:shadow-xl transition-all duration-200"
+              className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 group border border-gray-100"
             >
-              <div className="grid grid-cols-1 sm:grid-cols-2">
-                <div className="relative h-48 sm:h-full">
-                  <Image 
-                    src={service.icon}
-                    alt={service.title}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <div className="p-6 flex flex-col justify-center">
-                  <h3 className="text-2xl font-bold mb-3 text-gray-800">{service.title}</h3>
-                  <p className="text-gray-600 leading-relaxed">{service.description}</p>
-                </div>
+              <div className="relative h-64 overflow-hidden">
+                <Image 
+                  src={service.icon}
+                  alt={service.title}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <div className="p-8">
+                <h3 className="text-2xl font-bold mb-4 text-gray-900 group-hover:text-gold transition-colors">{service.title}</h3>
+                <p className="text-gray-600 leading-relaxed mb-4">{service.description}</p>
+                <Link href="/services" className="inline-flex items-center text-gold font-semibold hover:text-gold-dark transition-colors">
+                  Learn More
+                  <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </Link>
               </div>
             </div>
           ))}
